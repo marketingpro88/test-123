@@ -29,8 +29,8 @@ SUPABASE_URL = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
 
 POLL_INTERVAL = 30
 POLL_TIMEOUT = 900
-MIN_ER = 0.01
-MIN_COMMENTS = 10
+MIN_ER = 0.03
+MIN_COMMENTS = 50
 MAX_ROWS = 1500          # keep the baked dashboard payload light
 PROTECTED = ("拍摄中", "已处理")
 
@@ -271,7 +271,7 @@ def main():
 
     posts = run_actor(token, "apify~instagram-post-scraper",
                       {"username": names, "resultsLimit": 50,
-                       "onlyPostsNewerThan": "1 years"}, "Step 2 posts")
+                       "onlyPostsNewerThan": "90 days "}, "Step 2 posts")
 
     today = datetime.now(timezone.utc).date().isoformat()
     rows = to_rows(posts, followers, today)
