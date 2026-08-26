@@ -1,0 +1,312 @@
+<!-- Hero + 深色段。整份贴进一个 Custom JS/HTML element。Custom CSS 栏位保持清空。 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@700;900&amp;family=Playfair+Display:wght@700&amp;display=swap">
+
+<style>
+/* ===== 官方 .cta-button（原样，未改） ===== */
+.cta-button {
+    background: linear-gradient(95deg, #F4E2B8 0%, #E7C169 22%, #D9A441 50%, #E7C169 78%, #F4E2B8 100%) !important;
+    background-size: 200% auto !important;
+    color: #2A0A0A !important;
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.03em !important;
+    padding: 18px 52px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(122, 90, 15, 0.45) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+    isolation: isolate !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    max-width: 100% !important;
+    text-decoration: none !important;
+    animation: btnGoldPan 3.2s linear infinite,
+        btnPulseGold 2.6s ease-in-out infinite !important;
+    transition: transform 0.24s cubic-bezier(.22, 1, .36, 1) !important;
+}
+.cta-button > a,
+.cta-button > button,
+.cta-button > span,
+.cta-button > div {
+    background: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: inherit !important;
+    font: inherit !important;
+    letter-spacing: inherit !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+.cta-button * {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+}
+.cta-button > * {
+    position: relative !important;
+    z-index: 2 !important;
+}
+.cta-button::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -10% !important;
+    left: -80% !important;
+    width: 42% !important;
+    height: 120% !important;
+    z-index: 1 !important;
+    background: linear-gradient(105deg, transparent 20%, rgba(255, 252, 240, 0.85) 50%, transparent 80%) !important;
+    transform: skewX(-12deg) !important;
+    animation: btnShimmer 3s ease-in-out infinite !important;
+    pointer-events: none !important;
+}
+@keyframes btnGoldPan {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+@keyframes btnShimmer {
+    0%        { left: -80%; }
+    55%, 100% { left: 125%; }
+}
+@keyframes btnPulseGold {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 24px rgba(184, 134, 11, 0.38),
+            0 0 0 0 rgba(217, 164, 65, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6),
+            inset 0 -2px 6px rgba(122, 90, 15, 0.28);
+    }
+    50% {
+        transform: scale(1.018);
+        box-shadow: 0 12px 34px rgba(184, 134, 11, 0.5),
+            0 0 0 12px rgba(217, 164, 65, 0),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6),
+            inset 0 -2px 6px rgba(122, 90, 15, 0.28);
+    }
+}
+.cta-button:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    border-color: rgba(122, 90, 15, 0.75) !important;
+    box-shadow: 0 20px 48px rgba(184, 134, 11, 0.5),
+        0 0 0 5px rgba(217, 164, 65, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -2px 6px rgba(122, 90, 15, 0.28) !important;
+}
+.cta-button:active {
+    transform: translateY(0px) scale(0.98) !important;
+    box-shadow: 0 6px 18px rgba(184, 134, 11, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+@media (max-width: 640px) {
+    .cta-button {
+        font-size: 16.5px !important;
+        padding: 16px 28px !important;
+        width: 100% !important;
+        max-width: 420px !important;
+        white-space: nowrap !important;
+    }
+}
+@media (max-width: 380px) {
+    .cta-button {
+        font-size: 15px !important;
+        padding: 15px 18px !important;
+        letter-spacing: 0 !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .cta-button,
+    .cta-button::before { animation: none !important; }
+}
+
+/* ===== Hero / 深色段 ===== */
+.ch{
+  --wine:#5A1A2B; --rouge:#9E2233; --gold:#B8963E; --gold-hi:#F3E0AE;
+  --ink:#2B1418; --ink-2:#5C4247;
+  font-family:"Noto Sans SC",system-ui,"PingFang SC",sans-serif;
+  color:var(--ink); line-height:1.9; font-size:16px;
+}
+.ch *,.ch *::before,.ch *::after{box-sizing:border-box}
+
+/* ---------- 浅色底 ---------- */
+.ch-light{
+  background-color:#FBF3EA !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22820%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23C98D82%22%20stroke-width%3D%221%22%20opacity%3D%22.34%22%3E%3Cpath%20d%3D%22M40%2022%20L140%2084%20L98%20182%20L216%20138%20L140%2084%22%2F%3E%3Cpath%20d%3D%22M216%20138%20L334%2066%22%2F%3E%3Cpath%20d%3D%22M98%20182%20L60%20292%22%2F%3E%3Cpath%20d%3D%22M1404%2034%20L1304%20100%20L1356%20200%20L1240%20162%20L1304%20100%22%2F%3E%3Cpath%20d%3D%22M1240%20162%20L1124%2092%22%2F%3E%3Cpath%20d%3D%22M1356%20200%20L1396%20306%22%2F%3E%3Cpath%20d%3D%22M1124%2092%20L1050%2034%22%2F%3E%3Cpath%20d%3D%22M1396%20306%20L1420%20430%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23D08A7E%22%20opacity%3D%22.58%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2222%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2284%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2298%22%20cy%3D%22182%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%22216%22%20cy%3D%22138%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22334%22%20cy%3D%2266%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22292%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%221404%22%20cy%3D%2234%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%221304%22%20cy%3D%22100%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%221356%22%20cy%3D%22200%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221240%22%20cy%3D%22162%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221124%22%20cy%3D%2292%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221396%22%20cy%3D%22306%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221050%22%20cy%3D%2234%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221420%22%20cy%3D%22430%22%20r%3D%223.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"),
+    radial-gradient(62% 46% at 10% 0%,  rgba(233,193,182,.40) 0%, rgba(233,193,182,0) 62%),
+    radial-gradient(52% 42% at 90% 2%,  rgba(242,214,186,.38) 0%, rgba(242,214,186,0) 64%),
+    radial-gradient(78% 62% at 50% 46%, rgba(255,253,249,.92) 0%, rgba(255,253,249,0) 72%),
+    repeating-linear-gradient(to right,  rgba(150,108,92,.05) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(to bottom, rgba(150,108,92,.05) 0 1px, transparent 1px 72px),
+    linear-gradient(158deg,#F8EBE3 0%,#FDF8F1 46%,#FBF1E6 100%) !important;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat !important;
+  background-position:top center,top left,top right,center,top left,top left,center !important;
+  background-size:1440px 820px,auto,auto,auto,auto,auto,auto !important;
+}
+
+/* ---------- 深色底 ---------- */
+.ch-dark{
+  background-color:#180508 !important;
+  color:#F6EADD;
+  background-image:
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22820%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23C9A06A%22%20stroke-width%3D%221%22%20opacity%3D%22.32%22%3E%3Cpath%20d%3D%22M-20%2044%20L106%20122%20L174%2070%20L238%20152%20L106%20122%22%2F%3E%3Cpath%20d%3D%22M238%20152%20L284%20266%22%2F%3E%3Cpath%20d%3D%22M174%2070%20L290%2026%22%2F%3E%3Cpath%20d%3D%22M106%20122%20L38%20236%22%2F%3E%3Cpath%20d%3D%22M1420%20100%20L1324%20172%20L1374%20272%22%2F%3E%3Cpath%20d%3D%22M1324%20172%20L1212%20126%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23D8B57E%22%20opacity%3D%22.52%22%3E%3Ccircle%20cx%3D%22106%22%20cy%3D%22122%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22174%22%20cy%3D%2270%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22238%22%20cy%3D%22152%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%22284%22%20cy%3D%22266%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22290%22%20cy%3D%2226%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2238%22%20cy%3D%22236%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221324%22%20cy%3D%22172%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221374%22%20cy%3D%22272%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221212%22%20cy%3D%22126%22%20r%3D%223.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"),
+    radial-gradient(78% 88% at 0% 0%,   rgba(163,35,54,.92) 0%, rgba(122,22,37,.42) 36%, rgba(24,5,8,0) 74%),
+    radial-gradient(58% 62% at 88% 104%, rgba(90,26,43,.40) 0%, rgba(24,5,8,0) 72%),
+    repeating-linear-gradient(to right,  rgba(214,176,142,.042) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(to bottom, rgba(214,176,142,.042) 0 1px, transparent 1px 72px),
+    linear-gradient(118deg,#3E0B14 0%,#260709 48%,#180508 100%) !important;
+  background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat !important;
+  background-position:top center,top left,bottom right,top left,top left,center !important;
+  background-size:1440px 820px,auto,auto,auto,auto,auto !important;
+}
+
+/* ---------- 顶栏 ---------- */
+.ch-top{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:20px 0 40px;flex-wrap:wrap;
+}
+.ch-logo{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:19px;color:var(--wine);letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.ch-logo i{font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:8px;letter-spacing:.14em;line-height:1.35;color:#8A7076;text-align:left}
+.ch-top-mid{font-family:"Noto Serif SC",serif;font-weight:700;color:var(--rouge);font-size:15px}
+.ch-top-r{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:8px}
+.ch-dot{width:7px;height:7px;border-radius:50%;background:var(--rouge)}
+
+/* ---------- Hero 两栏 ---------- */
+.ch-wrap{width:min(100% - 2.5rem,1180px);margin-inline:auto}
+.ch-hero{display:grid;gap:44px;grid-template-columns:1fr;padding-bottom:56px}
+@media(min-width:940px){.ch-hero{grid-template-columns:1fr 1.05fr;align-items:center;gap:56px}}
+.ch-h1{
+  font-family:"Noto Serif SC",Georgia,serif;font-weight:900;
+  font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.36;margin:0;
+  text-wrap:balance;color:var(--ink);
+}
+.ch-h1 em{font-style:normal;color:var(--rouge)}
+.ch-copy{margin-top:30px;display:flex;flex-direction:column;gap:14px;font-size:17px}
+.ch-copy p{margin:0}
+/* 关键：高亮是浅茶色底纹，不是变色 */
+.mark{background:#F2E5CE;padding:.06em .3em;border-radius:3px;font-weight:700;color:var(--ink)}
+.ch-copy .wine{color:var(--rouge);font-weight:700}
+
+.ch-facts{margin-top:34px;display:flex;flex-direction:column;gap:11px;font-size:15.5px}
+.ch-facts div{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.ch-facts b{font-weight:700}
+.ch-facts .r{color:var(--rouge);font-weight:700}
+.ch-facts .sep{color:#B3A29F}
+
+/* ---------- 金框视频 ---------- */
+.ch-frame{
+  position:relative;padding:16px 22px;border-radius:14px;
+  background:linear-gradient(150deg,#2A0B12 0%,#170608 60%,#210910 100%);
+  box-shadow:0 30px 60px -34px rgba(46,12,23,.75), 0 0 0 1px rgba(184,150,62,.28);
+  background-image:
+    linear-gradient(#B8963E,#B8963E),linear-gradient(#B8963E,#B8963E),
+    linear-gradient(#B8963E,#B8963E),linear-gradient(#B8963E,#B8963E),
+    linear-gradient(#B8963E,#B8963E),linear-gradient(#B8963E,#B8963E),
+    linear-gradient(#B8963E,#B8963E),linear-gradient(#B8963E,#B8963E),
+    linear-gradient(150deg,#2A0B12 0%,#170608 60%,#210910 100%);
+  background-repeat:no-repeat;
+  background-size:38px 2px,2px 38px, 38px 2px,2px 38px, 38px 2px,2px 38px, 38px 2px,2px 38px, auto;
+  background-position:
+    8px 8px, 8px 8px,
+    calc(100% - 8px) 8px, calc(100% - 8px) 8px,
+    8px calc(100% - 8px), 8px calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) calc(100% - 8px),
+    center;
+}
+.ch-frame::before{
+  content:"A · I";position:absolute;left:7px;top:50%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;font-family:"IBM Plex Mono",monospace;font-size:9px;
+  letter-spacing:.28em;color:rgba(232,207,146,.75);
+}
+.ch-frame::after{
+  content:"· S Y S  R E A D Y";position:absolute;right:16px;bottom:5px;
+  font-family:"IBM Plex Mono",monospace;font-size:7.5px;letter-spacing:.2em;color:rgba(232,207,146,.45);
+}
+.ch-screen{
+  position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;
+  background:radial-gradient(120% 100% at 50% 0%,#3A1020,#150406);
+  border:1px solid rgba(184,150,62,.4);
+  display:grid;place-content:center;gap:10px;text-align:center;padding:20px;
+}
+.ch-screen iframe,.ch-screen video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ch-play{width:56px;height:56px;border-radius:50%;margin:0 auto;display:grid;place-items:center;
+  background:linear-gradient(150deg,#F3E0AE,#D9B65F 38%,#B8963E);color:#3A1208;font-size:17px;
+  box-shadow:0 8px 24px -6px rgba(184,150,62,.85)}
+.ch-screen p{margin:0;color:#E8CF92;font-size:12px;font-family:"IBM Plex Mono",monospace;letter-spacing:.1em}
+
+/* ---------- 金色 CTA ---------- */
+.ch-cta-wrap{grid-column:1/-1;display:flex;justify-content:center;padding-top:8px}
+
+/* ---------- 深色段 ---------- */
+.ch-dark-inner{padding:74px 0 40px;text-align:center}
+.ch-eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:14px;margin:0;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.24em;color:#D9B65F;
+}
+.ch-eyebrow::before,.ch-eyebrow::after{content:"";height:1px;width:32px;background:currentColor;opacity:.75}
+.ch-h2{
+  font-family:"Noto Serif SC",Georgia,serif;font-weight:900;color:#FFF6E8;
+  font-size:clamp(1.6rem,3.4vw,2.6rem);margin:22px 0 0;line-height:1.4;text-wrap:balance;
+}
+.ch-h2 em{font-style:normal;color:#E8CF92}
+.ch-dark-sub{margin:20px 0 0;color:#D9C4C9;font-size:17px}
+</style>
+
+<div class="ch ch-light">
+  <div class="ch-wrap">
+
+    <div class="ch-top">
+      <!-- ① LOGO：换成 <img src="深色版 logo" style="height:44px"> -->
+      <div class="ch-logo">INFINITE<i>NEW MEDIA<br>EDUCATION</i></div>
+      <div class="ch-top-mid">45 秒 · 真实学员见证</div>
+      <div class="ch-top-r"><span class="ch-dot"></span>美发 30 年 · 开店 20 年</div>
+    </div>
+
+    <div class="ch-hero">
+      <div>
+        <h1 class="ch-h1">外包烧掉<em>十几二十万</em>，<br>他决定<em>自己来</em></h1>
+
+        <div class="ch-copy">
+          <p>他<span class="mark">买过很多课都没学会</span>，后来把广告丢给外包 agent。</p>
+          <p>广告费越来越高，<span class="mark">他要的流量还是拿不到</span>。</p>
+          <p class="wine">不用会代码，不用会 AI。</p>
+        </div>
+
+        <div class="ch-facts">
+          <div>📅 <b>11月11–13日（三天）</b> 💻 <b>KL 线下</b> <span class="sep">·</span> 全程约 3 天</div>
+          <div>✦ <b>限 30 位</b> <span class="sep">·</span> 第一期首批学员 &nbsp; ⏱ <span class="r">名额满即关闭报名</span></div>
+        </div>
+      </div>
+
+      <!-- ② 视频：把 ch-screen 里面整段换成你的 <iframe> -->
+      <div class="ch-frame">
+        <div class="ch-screen">
+          <span class="ch-play">▶</span>
+          <p>JYASON · 45s</p>
+        </div>
+      </div>
+
+      <!-- ③ CTA 链接 -->
+      <div class="ch-cta-wrap">
+        <a class="cta-button" href="#"><span>YES! 我也要自己跑广告</span></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="ch ch-dark">
+  <div class="ch-wrap ch-dark-inner">
+    <p class="ch-eyebrow">先说问题</p>
+    <h2 class="ch-h2">这些事，是不是<em>每天都在烧你的钱</em>？</h2>
+    <p class="ch-dark-sub">中了 2 个以上，你就知道为什么不能再靠外人。</p>
+  </div>
+</div>
