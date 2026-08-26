@@ -1,0 +1,160 @@
+/* =========================================================
+   Jyason 学员见证页 — GoHighLevel 版
+   贴到:Funnel/Website → Settings → Custom CSS
+   所有选择器都收在 .jy-page 里,不会影响 GHL 其他元素
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&family=Playfair+Display:wght@600;700&display=swap');
+
+.jy-page{
+  /* Chalette 品牌设计系统 */
+  --jy-cream:#FAF0E4;
+  --jy-cream-2:#FDF8F0;
+  --jy-paper:#FFFFFF;
+  --jy-wine:#5A1A2B;
+  --jy-rouge:#9E2233;
+  --jy-gold:#B8963E;
+  --jy-gold-lite:#E8CF92;
+  --jy-gold-hi:#F3E0AE;
+  --jy-ink:#2B1418;
+  --jy-ink-2:#5C4247;
+  --jy-ink-3:#8A7076;
+  --jy-line:#E8D9C4;
+  --jy-line-gold:rgba(184,150,62,.32);
+  --jy-shadow:0 2px 8px rgba(46,12,23,.05), 0 24px 48px -30px rgba(46,12,23,.5);
+  --jy-grad:linear-gradient(150deg,#F3E0AE 0%,#D9B65F 38%,#B8963E 100%);
+
+  background:var(--jy-cream);
+  color:var(--jy-ink);
+  font-family:"Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:16px;
+  line-height:1.9;
+  text-align:center;
+  -webkit-font-smoothing:antialiased;
+  width:100%;
+  margin:0;
+}
+.jy-page *,
+.jy-page *::before,
+.jy-page *::after{box-sizing:border-box}
+
+.jy-page .jy-wrap{width:min(100% - 2rem, 760px);margin-left:auto;margin-right:auto}
+.jy-page .jy-band{padding-top:clamp(2.5rem,6vw,4rem);padding-bottom:clamp(2.5rem,6vw,4rem)}
+.jy-page .jy-hr{border:0;border-top:1px solid var(--jy-line);margin:0;height:0}
+.jy-page .jy-rule{width:60px;height:2px;margin:1.4rem auto;background:linear-gradient(90deg,transparent,var(--jy-gold),transparent)}
+.jy-page .jy-hl{color:var(--jy-rouge)}
+.jy-page .jy-dim{color:var(--jy-ink-3)}
+.jy-page .jy-small{font-size:.85rem}
+
+.jy-page .jy-h1,
+.jy-page .jy-h2{
+  margin:0;
+  font-family:"Noto Serif SC",Georgia,"Songti SC",serif;
+  font-weight:900;
+  line-height:1.38;
+  text-wrap:balance;
+  color:var(--jy-ink);
+  letter-spacing:0;
+}
+.jy-page .jy-h1{font-size:clamp(1.62rem,4.6vw,2.5rem)}
+.jy-page .jy-h2{font-size:clamp(1.35rem,3.6vw,2rem)}
+.jy-page .jy-p{margin:0}
+.jy-page a{color:inherit}
+.jy-page a:focus-visible{outline:2px solid var(--jy-gold);outline-offset:3px}
+
+/* 眉标 —— 文字 —— */
+.jy-page .jy-eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+  margin:0;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.73rem;letter-spacing:.22em;color:var(--jy-gold);
+}
+.jy-page .jy-eyebrow::before,
+.jy-page .jy-eyebrow::after{content:"";height:1px;width:2rem;background:currentColor;opacity:.7}
+
+.jy-page .jy-sub{margin:.9rem 0 0;color:var(--jy-ink-2);font-size:clamp(.95rem,1.2vw,1.05rem)}
+
+.jy-page .jy-logo{
+  display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.7rem;
+  font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:1.1rem;
+  letter-spacing:.03em;color:var(--jy-wine);
+}
+.jy-page .jy-logo i{
+  font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:.56rem;
+  letter-spacing:.16em;line-height:1.3;color:var(--jy-ink-3);text-align:left;
+}
+
+.jy-page .jy-watch{margin:1.7rem 0 0;font-size:.88rem;font-weight:700;color:var(--jy-wine)}
+.jy-page .jy-tc{font-family:"IBM Plex Mono",monospace;color:var(--jy-rouge);font-size:.82rem}
+
+/* 视频 16:9 金框 */
+.jy-page .jy-player{
+  position:relative;margin:1rem auto 0;border-radius:16px;padding:8px;
+  background:linear-gradient(160deg,rgba(184,150,62,.6),rgba(90,26,43,.6));
+  box-shadow:var(--jy-shadow);
+}
+.jy-page .jy-player-inner{
+  position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;
+  background:radial-gradient(120% 100% at 50% 0%,#3A1020 0%,#1C0710 100%);
+  display:grid;place-content:center;gap:.7rem;padding:1.25rem;
+}
+.jy-page .jy-player-inner iframe,
+.jy-page .jy-player-inner video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.jy-page .jy-badge{position:absolute;top:.8rem;left:.8rem;z-index:2;background:var(--jy-rouge);color:#fff;font-size:.68rem;font-weight:700;padding:.26rem .66rem;border-radius:999px}
+.jy-page .jy-play{width:54px;height:54px;border-radius:50%;margin:0 auto;background:var(--jy-grad);color:#3A1208;display:grid;place-items:center;font-size:1.1rem;box-shadow:0 8px 22px -6px rgba(184,150,62,.8)}
+.jy-page .jy-player-inner .jy-p{color:var(--jy-gold-lite);font-size:.76rem;line-height:1.7}
+.jy-page .jy-slot-tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.12em;background:rgba(232,207,146,.16);color:var(--jy-gold-hi);padding:.22rem .62rem;border-radius:999px}
+
+/* 正文:一句一段 */
+.jy-page .jy-voice{display:flex;flex-direction:column;gap:1.15rem;margin-top:2.2rem;font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.85}
+.jy-page .jy-voice b{font-weight:700}
+
+/* CTA */
+.jy-page .jy-cta{
+  display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;
+  padding:1.05rem 2.8rem;border-radius:999px;text-decoration:none;
+  background:var(--jy-grad);color:#3A1208;font-weight:700;
+  font-size:clamp(1.02rem,1.6vw,1.18rem);
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 12px 32px -10px rgba(184,150,62,.75), inset 0 1px 0 rgba(255,255,255,.6);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.jy-page .jy-cta:hover{transform:translateY(-2px);box-shadow:0 18px 42px -12px rgba(184,150,62,.9), inset 0 1px 0 rgba(255,255,255,.6);color:#3A1208}
+.jy-page .jy-ghost{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;
+  padding:.85rem 2rem;border-radius:999px;text-decoration:none;
+  border:1.5px solid var(--jy-line-gold);color:var(--jy-wine);font-weight:700;font-size:.98rem;
+  transition:background-color .18s ease,border-color .18s ease;
+}
+.jy-page .jy-ghost:hover{background:rgba(184,150,62,.11);border-color:var(--jy-gold);color:var(--jy-wine)}
+
+/* 好评卡 */
+.jy-page .jy-reviews{display:grid;gap:1rem;margin-top:1.6rem;text-align:left}
+@media (min-width:680px){.jy-page .jy-reviews{grid-template-columns:repeat(3,1fr)}}
+.jy-page .jy-review{background:var(--jy-paper);border-radius:12px;padding:1.3rem;box-shadow:var(--jy-shadow);display:flex;flex-direction:column;gap:.8rem}
+.jy-page .jy-review q{font-family:"Noto Serif SC",Georgia,serif;font-weight:700;font-size:1.02rem;line-height:1.65;color:var(--jy-wine);quotes:"「" "」"}
+.jy-page .jy-who{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--jy-line);display:flex;flex-direction:column}
+.jy-page .jy-who b{font-size:.92rem}
+.jy-page .jy-who span{font-size:.78rem;color:var(--jy-ink-3)}
+.jy-page .jy-review.jy-empty{border:1.5px dashed var(--jy-line-gold);box-shadow:none;background:rgba(184,150,62,.06);align-items:center;justify-content:center;text-align:center;min-height:170px;gap:.55rem}
+.jy-page .jy-review.jy-empty .jy-slot-tag{background:var(--jy-wine);color:var(--jy-gold-lite)}
+
+/* 为什么选:圆点用绝对定位,千万别用 flex(会把 <b> 拆成独立列) */
+.jy-page .jy-why{margin:1.8rem auto 0;text-align:left;max-width:620px}
+.jy-page .jy-why ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1.15rem}
+.jy-page .jy-why li{position:relative;padding-left:1.55rem;line-height:1.9;margin:0}
+.jy-page .jy-why li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--jy-gold)}
+
+/* footer */
+.jy-page .jy-foot{background:var(--jy-cream-2);padding-top:2.25rem;padding-bottom:2.25rem;border-top:1px solid var(--jy-line)}
+.jy-page .jy-links{display:flex;flex-wrap:wrap;gap:1.15rem;justify-content:center;font-size:.8rem;font-weight:700;color:var(--jy-wine)}
+.jy-page .jy-links a{text-decoration:none}
+.jy-page .jy-links a:hover{text-decoration:underline}
+.jy-page .jy-fine{max-width:600px;margin:.9rem auto 0;font-size:.69rem;line-height:1.75;color:var(--jy-ink-3)}
+
+/* 滚动淡入:默认可见,JS 就位后才隐藏 —— GHL 若挡掉 JS,内容照样显示 */
+.jy-page.jy-anim .jy-rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.jy-page.jy-anim .jy-rise.jy-in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .jy-page.jy-anim .jy-rise{opacity:1;transform:none;transition:none}
+  .jy-page .jy-cta{transition:none}
+}
