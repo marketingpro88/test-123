@@ -4,28 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jyason 的 45 秒</title>
-<meta name="description" content="真实学员见证:外包烧掉十几二十万之后,一个开了 20 年发廊的老板决定自己来。">
+<meta name="description" content="真实学员见证：外包烧掉十几二十万之后，一个开了 20 年发廊的老板决定自己来。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&family=Playfair+Display:wght@600;700&display=swap">
 <style>
+/* 结构 = students-review-page | 视觉 = Chalette 品牌设计系统(ai.chaletteku.com) */
 :root{
-  --bg:#FDF5F5;
+  --cream:#FAF0E4;
+  --cream-2:#FDF8F0;
   --paper:#FFFFFF;
-  --ink:#1C1517;
-  --ink-2:#5A4E51;
-  --ink-3:#9A8C8F;
-  --red:#F0334A;
-  --red-2:#F5333F;
-  --orange:#F8A64B;
-  --line:#F0E2E3;
-  --shadow:0 2px 8px rgba(240,51,74,.05), 0 22px 45px -28px rgba(240,51,74,.35);
+  --wine:#5A1A2B;
+  --wine-deep:#2E0C17;
+  --rouge:#9E2233;
+  --gold:#B8963E;
+  --gold-lite:#E8CF92;
+  --gold-hi:#F3E0AE;
+  --ink:#2B1418;
+  --ink-2:#5C4247;
+  --ink-3:#8A7076;
+  --line:#E8D9C4;
+  --line-gold:rgba(184,150,62,.32);
+  --shadow:0 2px 8px rgba(46,12,23,.05), 0 24px 48px -30px rgba(46,12,23,.5);
+  --grad-gold:linear-gradient(150deg,#F3E0AE 0%,#D9B65F 38%,#B8963E 100%);
   --max:760px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0;background:var(--bg);color:var(--ink);
+  margin:0;background:var(--cream);color:var(--ink);
   font-family:"Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
   font-size:clamp(15px,.5vw + 13.7px,16.5px);line-height:1.9;
   -webkit-font-smoothing:antialiased;text-align:center;
@@ -35,79 +42,98 @@ h1{font-size:clamp(1.62rem,4.6vw,2.5rem)}
 h2{font-size:clamp(1.35rem,3.6vw,2rem)}
 p{margin:0}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 .wrap{width:min(100% - 2rem, var(--max));margin-inline:auto}
 .band{padding-block:clamp(2.5rem,6vw,4rem)}
 .hr{border:0;border-top:1px solid var(--line);margin:0}
-.rule{width:56px;height:2px;margin:1.4rem auto;background:linear-gradient(90deg,transparent,var(--red),transparent);opacity:.55}
-.hl{color:var(--red)}
+.rule{width:60px;height:2px;margin:1.4rem auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hl{color:var(--rouge)}
 .dim{color:var(--ink-3)}
 .small{font-size:.85rem}
 
-.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.16em;color:var(--red)}
+/* 眉标 —— 文字 ——(ai.chaletteku.com 同款) */
+.eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.73rem;letter-spacing:.22em;color:var(--gold);
+}
+.eyebrow::before,.eyebrow::after{content:"";height:1px;width:2rem;background:currentColor;opacity:.7}
 .sub{margin-top:.9rem;color:var(--ink-2);font-size:clamp(.95rem,1.2vw,1.05rem)}
 
 .logo{
-  display:inline-flex;align-items:center;gap:.55rem;
-  font-family:Georgia,serif;font-weight:700;font-size:1.05rem;letter-spacing:.03em;
-  color:#fff;background:linear-gradient(135deg,var(--red-2),#FF5A45);
-  padding:.5rem 1rem;border-radius:6px;margin-bottom:1.6rem;
+  display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.7rem;
+  font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:1.1rem;
+  letter-spacing:.03em;color:var(--wine);
 }
-.logo i{font-style:normal;font-size:.55rem;letter-spacing:.14em;line-height:1.25;opacity:.85;text-align:left}
+.logo i{
+  font-family:"IBM Plex Mono",monospace;font-style:normal;font-size:.56rem;
+  letter-spacing:.16em;line-height:1.3;color:var(--ink-3);text-align:left;
+}
 
-.watch{margin-top:1.7rem;font-size:.88rem;font-weight:700;color:var(--ink)}
+.watch{margin-top:1.7rem;font-size:.88rem;font-weight:700;color:var(--wine)}
+.watch .tc{font-family:"IBM Plex Mono",monospace;color:var(--rouge);font-size:.82rem}
 
-/* 视频 16:9 —— 对标页同款 */
-.player{position:relative;margin:1rem auto 0;border-radius:16px;overflow:hidden;background:#161016;aspect-ratio:16/9;box-shadow:var(--shadow);display:grid;place-content:center;gap:.75rem;padding:1.25rem}
-.badge{position:absolute;top:.8rem;left:.8rem;background:var(--red);color:#fff;font-size:.68rem;font-weight:700;padding:.26rem .66rem;border-radius:999px}
-.play{width:54px;height:54px;border-radius:50%;margin:0 auto;background:linear-gradient(135deg,var(--red-2),var(--orange));color:#fff;display:grid;place-items:center;font-size:1.1rem}
-.player p{color:#C9B9BC;font-size:.76rem;line-height:1.7}
-.slot-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.12em;background:rgba(255,255,255,.14);color:#F3DADD;padding:.22rem .6rem;border-radius:999px}
+/* 视频 16:9,金框(ai.chaletteku.com 同款) */
+.player{
+  position:relative;margin:1rem auto 0;border-radius:16px;padding:8px;
+  background:linear-gradient(160deg,rgba(184,150,62,.6),rgba(90,26,43,.6));
+  box-shadow:var(--shadow);
+}
+.player-inner{
+  position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;
+  background:radial-gradient(120% 100% at 50% 0%,#3A1020 0%,#1C0710 100%);
+  display:grid;place-content:center;gap:.7rem;padding:1.25rem;
+}
+.badge{position:absolute;top:.8rem;left:.8rem;background:var(--rouge);color:#fff;font-size:.68rem;font-weight:700;padding:.26rem .66rem;border-radius:999px}
+.play{width:54px;height:54px;border-radius:50%;margin:0 auto;background:var(--grad-gold);color:#3A1208;display:grid;place-items:center;font-size:1.1rem;box-shadow:0 8px 22px -6px rgba(184,150,62,.8)}
+.player-inner p{color:var(--gold-lite);font-size:.76rem;line-height:1.7}
+.slot-tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.12em;background:rgba(232,207,146,.16);color:var(--gold-hi);padding:.22rem .62rem;border-radius:999px}
 
-/* 正文:一句一段 */
+/* 正文：一句一段 */
 .voice{display:flex;flex-direction:column;gap:1.15rem;margin-top:2.2rem;font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.85}
 .voice b{font-weight:700}
 
-/* CTA */
+/* CTA:金色渐变胶囊 */
 .cta{
   display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;
   padding:1.05rem 2.8rem;border-radius:999px;text-decoration:none;
-  background:linear-gradient(100deg,var(--red-2) 0%,#FA6A3C 55%,var(--orange) 100%);
-  color:#fff;font-weight:700;font-size:clamp(1.02rem,1.6vw,1.2rem);
-  box-shadow:0 12px 30px -10px rgba(245,51,63,.6);
+  background:var(--grad-gold);color:#3A1208;font-weight:700;
+  font-size:clamp(1.02rem,1.6vw,1.18rem);
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 12px 32px -10px rgba(184,150,62,.75), inset 0 1px 0 rgba(255,255,255,.6);
   transition:transform .18s ease, box-shadow .18s ease;
 }
-.cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(245,51,63,.75)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 18px 42px -12px rgba(184,150,62,.9), inset 0 1px 0 rgba(255,255,255,.6)}
 .cta-ghost{
   display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;
   padding:.85rem 2rem;border-radius:999px;text-decoration:none;
-  border:1.5px solid #F6C9CE;color:var(--red);font-weight:700;font-size:.98rem;
+  border:1.5px solid var(--line-gold);color:var(--wine);font-weight:700;font-size:.98rem;
   transition:background-color .18s ease,border-color .18s ease;
 }
-.cta-ghost:hover{background:#FEF0F1;border-color:var(--red)}
+.cta-ghost:hover{background:rgba(184,150,62,.11);border-color:var(--gold)}
 
 /* 好评卡 */
 .reviews{display:grid;gap:1rem;margin-top:1.6rem;text-align:left}
 @media (min-width:680px){.reviews{grid-template-columns:repeat(3,1fr)}}
 .review{background:var(--paper);border-radius:12px;padding:1.3rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.8rem}
-.review q{font-family:"Noto Serif SC",Georgia,serif;font-weight:700;font-size:1.02rem;line-height:1.65;quotes:"「" "」"}
+.review q{font-family:"Noto Serif SC",Georgia,serif;font-weight:700;font-size:1.02rem;line-height:1.65;color:var(--wine);quotes:"「" "」"}
 .review .who{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--line);display:flex;flex-direction:column}
 .review .who b{font-size:.92rem}
 .review .who span{font-size:.78rem;color:var(--ink-3)}
-.review.empty{border:1.5px dashed #F1CDD2;box-shadow:none;background:#FEF8F8;align-items:center;justify-content:center;text-align:center;min-height:170px;gap:.55rem}
-.review.empty .slot-tag{background:#FDE5E8;color:var(--red)}
+.review.empty{border:1.5px dashed var(--line-gold);box-shadow:none;background:rgba(184,150,62,.06);align-items:center;justify-content:center;text-align:center;min-height:170px;gap:.55rem}
+.review.empty .slot-tag{background:var(--wine);color:var(--gold-lite)}
 
-/* 为什么选 */
-.why{margin:1.8rem auto 0;text-align:left;display:flex;flex-direction:column;gap:1.25rem;max-width:620px}
-.why li{list-style:none;display:flex;gap:.9rem;line-height:1.85}
-.why li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--red);margin-top:.72rem}
-.why ul{margin:0;padding:0;display:flex;flex-direction:column;gap:1.25rem}
+/* 为什么选 —— 金色圆点，绝对定位(不能用 flex,会把 <b> 拆成独立列) */
+.why{margin:1.8rem auto 0;text-align:left;max-width:620px}
+.why ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:1.15rem}
+.why li{position:relative;padding-left:1.55rem;line-height:1.9}
+.why li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--gold)}
 
-footer{background:var(--paper);padding-block:2.25rem;border-top:1px solid var(--line)}
-footer .links{display:flex;flex-wrap:wrap;gap:1.15rem;justify-content:center;font-size:.8rem;font-weight:700;color:var(--red)}
+footer{background:var(--cream-2);padding-block:2.25rem;border-top:1px solid var(--line)}
+footer .links{display:flex;flex-wrap:wrap;gap:1.15rem;justify-content:center;font-size:.8rem;font-weight:700;color:var(--wine)}
 footer .links a{text-decoration:none}
-footer .links a:hover{text-decoration:underline}
+footer .links a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
 footer .fine{max-width:600px;margin:.9rem auto 0;font-size:.69rem;line-height:1.75;color:var(--ink-3)}
 
 .rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
@@ -129,30 +155,32 @@ footer .fine{max-width:600px;margin:.9rem auto 0;font-size:.69rem;line-height:1.
 
   <p class="eyebrow">真实学员见证</p>
 
-  <h1 style="margin-top:.9rem">外包烧掉<span class="hl">十几二十万</span><br>他决定<span class="hl">自己来</span></h1>
+  <h1 style="margin-top:1rem">外包烧掉<span class="hl">十几二十万</span><br>他决定<span class="hl">自己来</span></h1>
 
   <p class="sub">美发 30 年 / 自营发廊 20 年学员真实反馈</p>
 
-  <p class="watch">点击观看 TA 的完整分享 · 约 45 秒 ▼</p>
+  <p class="watch">点击观看 TA 的完整分享 · <span class="tc">约 45 秒</span> ▼</p>
 
-  <!-- 视频位:整段换成 <iframe> 或 <video> -->
+  <!-- 视频位：整段换成 <iframe> 或 <video> -->
   <div class="player">
-    <span class="badge">▶ 真人出镜亲述</span>
-    <span class="play" aria-hidden="true">▶</span>
-    <span class="slot-tag">视频待嵌入</span>
-    <p>Jyason 见证片 · 45 秒</p>
+    <div class="player-inner">
+      <span class="badge">▶ 真人出镜亲述</span>
+      <span class="play" aria-hidden="true">▶</span>
+      <span class="slot-tag">视频待嵌入</span>
+      <p>Jyason 见证片 · 45 秒</p>
+    </div>
   </div>
 
   <div class="voice">
-    <p>广告不是砸钱就有人。用对方法,AI 可以替你一直跑。</p>
-    <p>他做美发 <b>30 年</b>,开了 <b>20 年</b>发廊,买过很多课都没学会。</p>
-    <p>外包烧掉<b class="hl">十几二十万</b>,广告费越来越高,流量还是拿不到。</p>
-    <p>上课他才知道:文案、图、数字人、视频,<b>设置好一次 AI 就会帮你跑</b>。</p>
-    <p><b class="hl">不会电脑也跟得上</b>,少走很多冤枉路!</p>
+    <p>广告不是砸钱就有人。用对方法，AI 可以替你一直跑。</p>
+    <p>他做美发 <b>30 年</b>,开了 <b>20 年</b>发廊，买过很多课都没学会。</p>
+    <p>外包烧掉<b class="hl">十几二十万</b>,广告费越来越高，流量还是拿不到。</p>
+    <p>上课他才知道：文案、图、数字人、视频，<b>设置好一次 AI 就会帮你跑</b>。</p>
+    <p><b class="hl">不会电脑也跟得上</b>,少走很多冤枉路！</p>
     <p>我是 Chalette,带你用 AI 把客户带进来。</p>
   </div>
 
-  <!-- CTA 链接待填:GHL Funnel -->
+  <!-- CTA 链接待填：GHL Funnel -->
   <a class="cta" href="#why">Yes 我要自己跑广告! &nbsp;»</a>
 </section>
 
@@ -160,14 +188,14 @@ footer .fine{max-width:600px;margin:.9rem auto 0;font-size:.69rem;line-height:1.
 
 <!-- ============ 2 · 学员好评 ============ -->
 <section class="band wrap">
-  <h2>他说的每一句,<br>都是他自己走过的路。</h2>
-  <p class="sub">真人出镜,原片未改写</p>
+  <h2>他说的每一句，<br>都是他自己走过的路。</h2>
+  <p class="sub">真人出镜，原片未改写</p>
   <div class="rule"></div>
 
   <div class="reviews rise">
     <div class="review">
-      <q>你一定要来,就算你不会电脑。</q>
-      <p class="small" style="color:var(--ink-2)">从买课没学会、外包烧掉十几二十万,到自己把广告跑起来。</p>
+      <q>你一定要来，就算你不会电脑。</q>
+      <p class="small" style="color:var(--ink-2)">从买课没学会、外包烧掉十几二十万，到自己把广告跑起来。</p>
       <div class="who"><b>Jyason</b><span>美发 30 年 · 自营发廊 20 年</span></div>
     </div>
     <div class="review empty">
@@ -194,14 +222,14 @@ footer .fine{max-width:600px;margin:.9rem auto 0;font-size:.69rem;line-height:1.
     <ul>
       <li>手把手教你用 AI 做<b>选题、文案、广告图、数字人、视频</b>,把内容接成你自己的<b>获客系统</b>。</li>
       <li>提供可马上实操落地的 <b>SOP、模板和 Formula</b>。</li>
-      <li><b>现场手把手带做</b>,当场设置、当场跑起来,不是回家自己看录像。</li>
-      <li><b>不用会代码,不用会 AI</b> —— 不会电脑也跟得上。</li>
+      <li><b>现场手把手带做</b>,当场设置、当场跑起来，不是回家自己看录像。</li>
+      <li><b>不用会代码，不用会 AI</b> —— 不会电脑也跟得上。</li>
     </ul>
   </div>
 
   <div class="rule"></div>
 
-  <!-- CTA 链接待填:GHL Funnel -->
+  <!-- CTA 链接待填：GHL Funnel -->
   <a class="cta" href="#">Yes 我要自己跑广告! &nbsp;»</a>
   <p class="small dim" style="margin-top:1.1rem">第一期 · 11 月 11–13 日 · KL 线下 · 限 30 位</p>
 </section>
@@ -214,7 +242,7 @@ footer .fine{max-width:600px;margin:.9rem auto 0;font-size:.69rem;line-height:1.
       <a href="#">Earning disclaimer</a>
     </div>
     <p class="fine">Copyright © 2025 Infinite New Media · All Rights Reserved.</p>
-    <p class="fine">学员分享代表其个人经历,不构成任何收入或成果承诺。</p>
+    <p class="fine">学员分享代表其个人经历，不构成任何收入或成果承诺。</p>
     <p class="fine">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of Facebook, Inc.</p>
   </div>
 </footer>
