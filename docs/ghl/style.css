@@ -164,7 +164,7 @@
    ========================================================= */
 .ch-bg{
   position:relative;
-  background-color:#FBF3EA;
+  background-color:#FBF3EA !important;
   background-image:
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22760%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23C98D82%22%20stroke-width%3D%221%22%20opacity%3D%22.38%22%3E%3Cpath%20d%3D%22M40%2018%20L138%2078%20L96%20176%20L214%20132%20L138%2078%22%2F%3E%3Cpath%20d%3D%22M214%20132%20L332%2062%22%2F%3E%3Cpath%20d%3D%22M96%20176%20L58%20286%22%2F%3E%3Cpath%20d%3D%22M1400%2030%20L1300%2096%20L1352%20196%20L1236%20158%20L1300%2096%22%2F%3E%3Cpath%20d%3D%22M1236%20158%20L1120%2088%22%2F%3E%3Cpath%20d%3D%22M1352%20196%20L1392%20300%22%2F%3E%3Cpath%20d%3D%22M1120%2088%20L1046%2030%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23D08A7E%22%20opacity%3D%22.62%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2218%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22138%22%20cy%3D%2278%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2296%22%20cy%3D%22176%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%22214%22%20cy%3D%22132%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22332%22%20cy%3D%2262%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%22286%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%221400%22%20cy%3D%2230%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%221300%22%20cy%3D%2296%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%221352%22%20cy%3D%22196%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221236%22%20cy%3D%22158%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221120%22%20cy%3D%2288%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221392%22%20cy%3D%22300%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221046%22%20cy%3D%2230%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"),
     radial-gradient(62% 46% at 10% 0%,   rgba(233,193,182,.40) 0%, rgba(233,193,182,0) 62%),
@@ -172,10 +172,10 @@
     radial-gradient(78% 62% at 50% 46%,  rgba(255,253,249,.92) 0%, rgba(255,253,249,0) 72%),
     repeating-linear-gradient(to right,  rgba(150,108,92,.052) 0 1px, transparent 1px 72px),
     repeating-linear-gradient(to bottom, rgba(150,108,92,.052) 0 1px, transparent 1px 72px),
-    linear-gradient(158deg, #F8EBE3 0%, #FDF8F1 46%, #FBF1E6 100%);
-  background-repeat:no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat;
-  background-position:top center, top left, top right, center, top left, top left, center;
-  background-size:1440px 760px, auto, auto, auto, auto, auto, auto;
+    linear-gradient(158deg, #F8EBE3 0%, #FDF8F1 46%, #FBF1E6 100%) !important;
+  background-repeat:no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat !important;
+  background-position:top center, top left, top right, center, top left, top left, center !important;
+  background-size:1440px 760px, auto, auto, auto, auto, auto, auto !important;
 }
 
 /* =========================================================
@@ -184,7 +184,7 @@
    ========================================================= */
 .ch-bg-dark{
   position:relative;
-  background-color:#180508;
+  background-color:#180508 !important;
   color:#F6EADD;
   background-image:
     url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221440%22%20height%3D%22760%22%20fill%3D%22none%22%3E%3Cg%20stroke%3D%22%23C9A06A%22%20stroke-width%3D%221%22%20opacity%3D%22.34%22%3E%3Cpath%20d%3D%22M-20%2040%20L104%20118%20L172%2066%20L236%20148%20L104%20118%22%2F%3E%3Cpath%20d%3D%22M236%20148%20L282%20262%22%2F%3E%3Cpath%20d%3D%22M172%2066%20L288%2022%22%2F%3E%3Cpath%20d%3D%22M104%20118%20L36%20232%22%2F%3E%3Cpath%20d%3D%22M1418%2096%20L1322%20168%20L1372%20268%22%2F%3E%3Cpath%20d%3D%22M1322%20168%20L1210%20122%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23D8B57E%22%20opacity%3D%22.55%22%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%22118%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22172%22%20cy%3D%2266%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22236%22%20cy%3D%22148%22%20r%3D%224.5%22%2F%3E%3Ccircle%20cx%3D%22282%22%20cy%3D%22262%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22288%22%20cy%3D%2222%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2236%22%20cy%3D%22232%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221322%22%20cy%3D%22168%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221372%22%20cy%3D%22268%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221210%22%20cy%3D%22122%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%221418%22%20cy%3D%2296%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"),
@@ -192,10 +192,10 @@
     radial-gradient(58% 62% at 88% 104%, rgba(90,26,43,.40) 0%, rgba(24,5,8,0) 72%),
     repeating-linear-gradient(to right,  rgba(214,176,142,.045) 0 1px, transparent 1px 72px),
     repeating-linear-gradient(to bottom, rgba(214,176,142,.045) 0 1px, transparent 1px 72px),
-    linear-gradient(118deg, #3E0B14 0%, #260709 48%, #180508 100%);
-  background-repeat:no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat;
-  background-position:top center, top left, bottom right, top left, top left, center;
-  background-size:1440px 760px, auto, auto, auto, auto, auto;
+    linear-gradient(118deg, #3E0B14 0%, #260709 48%, #180508 100%) !important;
+  background-repeat:no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat !important;
+  background-position:top center, top left, bottom right, top left, top left, center !important;
+  background-size:1440px 760px, auto, auto, auto, auto, auto !important;
 }
 .ch-bg-dark h1,.ch-bg-dark h2,.ch-bg-dark h3,
 .ch-bg-dark .jy-h1,.ch-bg-dark .jy-h2{color:#FFF6E8}
