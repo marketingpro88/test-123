@@ -1,0 +1,152 @@
+/* =========================================================
+   原有 GHL 自定义 class - 改成 Chalette 酒红金色系
+   class 名称完全不变，直接整份替换旧的即可
+   ========================================================= */
+:root{
+  --ch-wine:#5A1A2B;
+  --ch-wine-deep:#2E0C17;
+  --ch-rouge:#9E2233;
+  --ch-gold:#B8963E;
+  --ch-gold-lite:#E8CF92;
+  --ch-gold-hi:#F3E0AE;
+  --ch-cream:#FAF0E4;
+}
+
+/* ---------- 标题：酒红 -> 古铜金 渐变字 ---------- */
+.advanced-headline{
+  font-size:36px;
+  font-weight:bold;
+  text-align:center;
+  margin-bottom:20px;
+  cursor:pointer;
+  color:var(--ch-wine);                 /* 不支持渐变字时的兜底颜色 */
+  transition:transform .3s ease, text-shadow .3s ease;
+  animation:moveIn 1s ease-in-out;
+}
+/* 只有在浏览器真的支持 background-clip:text 时才把字变透明，
+   避免旧浏览器上文字整个消失 */
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .advanced-headline{
+    background:linear-gradient(45deg,#5A1A2B 0%,#9E2233 45%,#B8963E 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+}
+/* 深酒红底上用这个版本：纯金色渐变 */
+.advanced-headline.on-dark{
+  color:var(--ch-gold-hi);
+}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .advanced-headline.on-dark{
+    background:linear-gradient(45deg,#F3E0AE 0%,#D9B65F 45%,#B8963E 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+}
+.advanced-headline:hover{transform:translateY(-2px)}
+
+/* 原本缺这一段，所以入场动画一直没生效 */
+@keyframes moveIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ---------- 图片：两段合并成一段 ---------- */
+.enhanced-image{
+  cursor:pointer;
+  box-shadow:0 4px 8px rgba(46,12,23,.18);
+  transition:box-shadow .3s ease, transform .3s ease;
+}
+.enhanced-image:hover{
+  box-shadow:0 6px 16px rgba(46,12,23,.28);
+  transform:scale(1.05);
+}
+
+/* ---------- 主 CTA：金色渐变 + 酒红字 ---------- */
+.advanced-cta-button{
+  background:linear-gradient(135deg,#F3E0AE 0%,#E8CF92 22%,#D9B65F 55%,#C9A24D 78%,#B8963E 100%);
+  color:#3A1208;
+  padding:15px 30px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:8px;
+  font-size:30px;
+  font-weight:bold;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .3s ease;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(184,150,62,.45);   /* 原本是蓝色阴影，改成金色 */
+}
+.advanced-cta-button::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:rgba(255,255,255,.7);
+  border-radius:100%;
+  width:120%;
+  height:120%;
+  z-index:0;
+  transition:transform .5s ease;
+}
+.advanced-cta-button:hover{
+  background:linear-gradient(135deg,#F7E8BD 0%,#EAD4A0 22%,#DCBC6B 55%,#CBA95A 78%,#BE9C45 100%);
+  box-shadow:0 6px 22px rgba(184,150,62,.62);
+  color:#3A1208;
+}
+.advanced-cta-button:active::before{transform:translate(-50%,-50%) scale(1)}
+.advanced-cta-button span{position:relative;z-index:1}
+
+/* ---------- 次要按钮：酒红底 + 金色描边光晕 ---------- */
+.glowing-button{
+  padding:10px 20px;
+  font-size:16px;
+  background-color:var(--ch-wine);
+  color:var(--ch-gold-hi);
+  border:1px solid rgba(184,150,62,.55);
+  border-radius:5px;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 10px rgba(184,150,62,.55);
+  animation:glowing 2s infinite;
+  transition:transform .3s ease-in-out;
+}
+@keyframes glowing{
+  0%   {box-shadow:0 0 5px  #B8963E, 0 0 10px #B8963E, 0 0 15px rgba(184,150,62,.5), 0 0 20px rgba(232,207,146,.35)}
+  50%  {box-shadow:0 0 10px #D9B65F, 0 0 20px #D9B65F, 0 0 30px rgba(217,182,95,.55), 0 0 40px rgba(243,224,174,.4)}
+  100% {box-shadow:0 0 5px  #E8CF92, 0 0 10px #E8CF92, 0 0 15px rgba(232,207,146,.5), 0 0 20px rgba(232,207,146,.35)}
+}
+.glowing-button:hover{transform:scale(1.05)}
+
+/* ---------- 渐变底色块：深酒红 ---------- */
+.gradient-background{
+  background:linear-gradient(135deg,#5A1A2B 0%,#3E1020 55%,#2E0C17 100%);
+  color:var(--ch-cream);
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+/* 想要奶油底的版本就加 .light */
+.gradient-background.light{
+  background:linear-gradient(135deg,#FDF8F0 0%,#FAF0E4 100%);
+  color:var(--ch-wine);
+}
+
+/* ---------- 无障碍：使用者关掉动效时不要闪 ---------- */
+@media (prefers-reduced-motion: reduce){
+  .advanced-headline{animation:none}
+  .glowing-button{animation:none;box-shadow:0 0 10px rgba(184,150,62,.55)}
+  .enhanced-image,
+  .advanced-cta-button,
+  .glowing-button{transition:none}
+  .enhanced-image:hover,
+  .glowing-button:hover{transform:none}
+}
